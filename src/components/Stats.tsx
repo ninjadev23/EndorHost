@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Stats: React.FC = () => {
+const Stats = () => {
   return (
     <section className="py-12 relative z-10">
       <div className="max-w-layout mx-auto px-8">

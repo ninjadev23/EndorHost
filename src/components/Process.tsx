@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Process: React.FC = () => {
+const Process = () => {
   return (
     <section id="proceso" className="py-20 relative z-10 bg-process-bg bg-cover bg-center bg-fixed border-y border-endor-border">
       <div className="max-w-layout mx-auto px-8 relative z-10">

@@ -1,4 +1,3 @@
-import React from 'react';
 import { X, ShieldCheck } from 'lucide-react';
 
 interface PayPalModalProps {
@@ -8,7 +7,7 @@ interface PayPalModalProps {
   price: string;
 }
 
-const PayPalModal: React.FC<PayPalModalProps> = ({ isOpen, onClose, planName, price }) => {
+const PayPalModal = ({ isOpen, onClose, planName, price }: PayPalModalProps) => {
   if (!isOpen) return null;
 
   return (

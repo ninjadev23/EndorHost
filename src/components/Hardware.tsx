@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Hardware: React.FC = () => {
+const Hardware = () => {
   return (
     <section id="hardware" className="py-20 relative bg-hardware-bg bg-cover bg-center bg-fixed border-y border-endor-border">
       <div className="max-w-layout mx-auto px-8 relative z-10">

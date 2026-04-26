@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Check } from 'lucide-react';
 import PayPalModal from './PayPalModal';
 
-const Plans: React.FC = () => {
+const Plans = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState({ name: '', price: '' });
 

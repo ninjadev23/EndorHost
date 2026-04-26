@@ -1,7 +1,6 @@
-import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
 
   return (

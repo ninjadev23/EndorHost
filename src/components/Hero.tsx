@@ -1,7 +1,6 @@
-import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const { t } = useLanguage();
 
   return (
