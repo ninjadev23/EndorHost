@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-endor-dark: #0f0a1c;
+  --color-endor-darker: #080510;
+  --color-endor-card: #16102a;
+  --color-endor-primary: #9d38ff;
+  --color-endor-primary-hover: #b05eff;
+  --color-endor-secondary: #6e22c5;
+  --color-endor-text: #f0f0f0;
+  --color-endor-muted: #a097b5;
+  --color-endor-border: rgba(157, 56, 255, 0.2);
+  --color-endor-border-hl: rgba(157, 56, 255, 0.6);
+  --color-endor-gold: #FFB800;
+  --color-endor-gold-glow: rgba(255, 184, 0, 0.4);
+
+  --font-sans: "Inter", sans-serif;
+
+  --spacing-layout: 1200px;
+  
+  --animate-bg-scroll: bgScroll 100s linear infinite;
+  --animate-fade-in: fadeIn 1s ease-out;
+  --animate-slide-up: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes bgScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: -400px 400px; }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-endor-darker text-endor-text overflow-x-hidden relative leading-relaxed;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+}
+
+@utility stars-bg {
+  @apply fixed top-0 left-0 w-screen h-screen -z-10 opacity-50;
+  background-image: 
+    radial-gradient(1px 1px at 10% 20%, white, rgba(0,0,0,0)), 
+    radial-gradient(1.5px 1.5px at 30% 60%, rgba(255,255,255,0.8), rgba(0,0,0,0)), 
+    radial-gradient(2px 2px at 80% 40%, rgba(255,255,255,0.6), rgba(0,0,0,0)), 
+    radial-gradient(1px 1px at 90% 90%, white, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 20% 80%, rgba(157, 56, 255,0.8), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 70% 80%, rgba(255,255,255,0.4), rgba(0,0,0,0));
+  background-size: 200px 200px;
+  animation: bgScroll 100s linear infinite;
+}
+
+@utility text-gradient {
+  @apply bg-gradient-to-r from-endor-primary to-[#d991ff] text-transparent bg-clip-text;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 py-3 px-6 rounded-md font-semibold font-sans cursor-pointer transition-all duration-300 border-none text-base no-underline;
+}
+
+@utility btn-primary {
+  @apply bg-endor-primary text-white shadow-[0_0_15px_rgba(157,56,255,0.3)] hover:bg-endor-primary-hover hover:shadow-[0_0_25px_rgba(157,56,255,0.6)] hover:-translate-y-0.5;
+}
+
+@utility btn-secondary {
+  @apply bg-transparent text-endor-primary border border-solid border-endor-primary hover:bg-[rgba(157,56,255,0.1)] hover:-translate-y-0.5;
+}
+
+@utility btn-gold {
+  @apply bg-endor-gold text-black shadow-[0_0_15px_rgba(255,184,0,0.4)] hover:bg-[#ffcc33] hover:shadow-[0_0_25px_rgba(255,184,0,0.4)] hover:-translate-y-0.5;
+}
+
+@utility bg-hardware-bg {
+  background-image: linear-gradient(to bottom, rgba(8, 5, 16, 1), rgba(8, 5, 16, 0.4), rgba(8, 5, 16, 1)), url("/hardware-bg.png");
+}
+
+@utility bg-process-bg {
+  background-image: linear-gradient(to bottom, rgba(8, 5, 16, 1), rgba(8, 5, 16, 0.6), rgba(8, 5, 16, 1)), url("/process-bg.png");
+}
