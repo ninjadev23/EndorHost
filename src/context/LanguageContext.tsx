@@ -22,7 +22,16 @@ const translations: Translations = {
     'hero.title.gradient': 'Discord Bots',
     'hero.subtitle': 'EndorHost ofrece los mejores precios del mercado con hardware de última generación. Más de 32.000 clientes satisfechos y contando.',
     'hero.btn.plans': 'Ver Planes',
-    'hero.btn.discord': 'Unirse al Discord'
+    'hero.btn.discord': 'Unirse al Discord',
+    'login.title': 'EndorHost',
+    'login.subtitle': 'Accede a tu panel de control',
+    'login.userLabel': 'Usuario o correo electrónico',
+    'login.passLabel': 'Contraseña',
+    'login.btn': 'Entrar',
+    'login.forgot': '¿Olvidaste tu contraseña?',
+    'login.noServer': '¿No tienes un servidor? Consíguelo ahora',
+    'login.error.email': 'Por favor, introduce un email válido',
+    'login.error.password': 'La contraseña debe tener al menos 6 caracteres'
   },
   EN: {
     'nav.home': 'Home',
@@ -36,7 +45,16 @@ const translations: Translations = {
     'hero.title.gradient': 'Discord Bots',
     'hero.subtitle': 'EndorHost offers the best market prices with next-generation hardware. Over 32,000 satisfied customers and counting.',
     'hero.btn.plans': 'View Plans',
-    'hero.btn.discord': 'Join Discord'
+    'hero.btn.discord': 'Join Discord',
+    'login.title': 'EndorHost',
+    'login.subtitle': 'Access your control panel',
+    'login.userLabel': 'Username or email address',
+    'login.passLabel': 'Password',
+    'login.btn': 'Login',
+    'login.forgot': 'Forgot your password?',
+    'login.noServer': "Don't have a server? Get it now",
+    'login.error.email': 'Please enter a valid email',
+    'login.error.password': 'Password must be at least 6 characters'
   }
 };
 
