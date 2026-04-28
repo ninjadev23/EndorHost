@@ -15,7 +15,7 @@ const Navbar = () => {
           <a href="#inicio" className="text-endor-primary-hover font-semibold text-[0.95rem] transition-colors">{t('nav.home')}</a>
           <a href="#planes" className="text-endor-text hover:text-endor-primary-hover font-semibold text-[0.95rem] transition-colors">{t('nav.plans')}</a>
           <a href="#hardware" className="text-endor-text hover:text-endor-primary-hover font-semibold text-[0.95rem] transition-colors">{t('nav.hardware')}</a>
-          <a href="#proceso" className="text-endor-text hover:text-endor-primary-hover font-semibold text-[0.95rem] transition-colors">{t('nav.process')}</a>
+          <a href="#resenas" className="text-endor-text hover:text-endor-primary-hover font-semibold text-[0.95rem] transition-colors">{t('nav.reviews')}</a>
           <a href="#pago" className="text-endor-text hover:text-endor-primary-hover font-semibold text-[0.95rem] transition-colors">{t('nav.payment')}</a>
         </nav>
 
