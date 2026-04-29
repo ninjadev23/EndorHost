@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ReviewProps {
   name: string;
@@ -81,66 +82,70 @@ const ReviewCard: React.FC<ReviewProps> = ({ name, avatar, text, rating = 5, tag
   </div>
 );
 
-const Reviews = () => (
-  <section id="resenas" className="py-24 relative z-10 overflow-hidden bg-process-bg bg-cover bg-center bg-fixed border-y border-endor-border">
-    {/* Background overlays */}
-    <div className="absolute inset-0 bg-endor-darker/80 pointer-events-none" />
-    <div className="absolute inset-0 bg-gradient-to-b from-endor-darker via-transparent to-endor-darker pointer-events-none" />
-    <div className="absolute w-[600px] h-[600px] rounded-full bg-endor-primary/8 blur-[120px] -bottom-20 -left-20 pointer-events-none" />
+const Reviews = () => {
+  const { t } = useLanguage();
+
+  return (
+    <section id="resenas" className="py-24 relative z-10 overflow-hidden bg-process-bg bg-cover bg-center bg-fixed border-y border-endor-border">
+      {/* Background overlays */}
+      <div className="absolute inset-0 bg-endor-darker/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-endor-darker via-transparent to-endor-darker pointer-events-none" />
+      <div className="absolute w-[600px] h-[600px] rounded-full bg-endor-primary/8 blur-[120px] -bottom-20 -left-20 pointer-events-none" />
 
 
-    <div className="max-w-layout mx-auto px-8">
-      {/* Header */}
-      <div className="text-center mb-14">
-        <span className="inline-block text-xs font-black tracking-[0.25em] text-endor-primary uppercase mb-3 bg-endor-primary/10 border border-endor-border px-4 py-1.5 rounded-full">
-          Comunidad
-        </span>
-        <h2 className="text-4xl md:text-5xl font-black text-white mt-3 leading-tight">
-          Lo Que Dicen<br />
-          <span style={{
-            background: 'linear-gradient(90deg,#9d38ff,#d991ff)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}>Nuestros Clientes</span>
-        </h2>
-        <p className="text-endor-muted text-lg mt-4">
-          Más de 5.000 clientes satisfechos confían en EndorHost.
-        </p>
-      </div>
+      <div className="max-w-layout mx-auto px-8">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <span className="inline-block text-xs font-black tracking-[0.25em] text-endor-primary uppercase mb-3 bg-endor-primary/10 border border-endor-border px-4 py-1.5 rounded-full">
+            {t('rv.tag')}
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black text-white mt-3 leading-tight">
+            {t('rv.title1')}<br />
+            <span style={{
+              background: 'linear-gradient(90deg,#9d38ff,#d991ff)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}>{t('rv.title2')}</span>
+          </h2>
+          <p className="text-endor-muted text-lg mt-4">
+            {t('rv.sub')}
+          </p>
+        </div>
 
-      {/* Rating badge */}
-      <div className="flex justify-center mb-10">
-        <div className="inline-flex items-center gap-3 bg-endor-card/60 border border-endor-border rounded-full px-6 py-3">
-          <div className="flex gap-0.5">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} size={16} className="text-endor-gold fill-endor-gold" style={{ filter: 'drop-shadow(0 0 4px rgba(255,184,0,0.5))' }} />
-            ))}
+        {/* Rating badge */}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex items-center gap-3 bg-endor-card/60 border border-endor-border rounded-full px-6 py-3">
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} size={16} className="text-endor-gold fill-endor-gold" style={{ filter: 'drop-shadow(0 0 4px rgba(255,184,0,0.5))' }} />
+              ))}
+            </div>
+            <span className="font-black text-white">4.9</span>
+            <span className="text-endor-muted text-sm">{t('rv.rating')}</span>
           </div>
-          <span className="font-black text-white">4.9</span>
-          <span className="text-endor-muted text-sm">de 5 · más de 500 reseñas</span>
+        </div>
+
+        {/* Reviews grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {reviews.map((r, i) => (
+            <ReviewCard key={i} {...r} />
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-12">
+          <a
+            href="https://discord.gg/rAUQENzfUU"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-secondary text-sm px-8 py-3"
+          >
+            {t('rv.cta')}
+          </a>
         </div>
       </div>
-
-      {/* Reviews grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {reviews.map((r, i) => (
-          <ReviewCard key={i} {...r} />
-        ))}
-      </div>
-
-      {/* CTA */}
-      <div className="text-center mt-12">
-        <a
-          href="https://discord.gg/rAUQENzfUU"
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-secondary text-sm px-8 py-3"
-        >
-          Únete a nuestra comunidad →
-        </a>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Reviews;
