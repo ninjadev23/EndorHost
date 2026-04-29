@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -7,6 +7,7 @@ import minecraftBg from '../assets/minecraft-bg.png';
 
 const Login = () => {
   const { language, setLanguage, t } = useLanguage();
+  const navigate = useNavigate();
 
   const loginSchema = z.object({
     email: z.string().email({ message: t('login.error.email') }),
@@ -27,7 +28,7 @@ const Login = () => {
     // Simular login
     console.log('Login data:', data);
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    alert(language === 'ES' ? '¡Login simulado con éxito!' : 'Simulated login successful!');
+    navigate('/dashboard');
   };
 
   return (
