@@ -22,15 +22,15 @@ const Navbar = () => {
 
   return (
     <>
-      {/* ── PROMO BAR — Like Holy.gg ── */}
+      {/* ── PROMO BAR ── */}
       <div className="w-full bg-endor-primary text-white text-center text-xs font-bold py-2.5 px-4 flex items-center justify-center gap-4 relative z-50">
         <span className="animate-pulse text-endor-gold">✦</span>
         <span>
-          ¡Oferta de bienvenida! <strong className="text-endor-gold">40% OFF</strong> en tu primer mes usando el código{' '}
+          {t('promo.text')} <strong className="text-endor-gold">40% OFF</strong> {t('promo.suffix')}{' '}
           <span className="bg-white/20 px-2 py-0.5 rounded font-mono tracking-wider">ENDOR40</span>
         </span>
         <a href="#planes" className="hidden sm:inline-flex items-center gap-1 underline underline-offset-2 hover:text-endor-gold transition-colors font-black">
-          Ver planes →
+          {t('promo.link')}
         </a>
         <span className="animate-pulse text-endor-gold">✦</span>
       </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
             ))}
             <div className="relative group">
               <button className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-endor-muted hover:text-white rounded-lg hover:bg-white/5 transition-all">
-                Servicios <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
+                {t('nav.services')} <ChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
               </button>
               <div className="absolute top-full left-0 mt-2 w-52 bg-endor-card/95 backdrop-blur-xl border border-endor-border rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
                 {['Hosting Minecraft', 'Discord Bots', 'Páginas Web', 'Dominios'].map((s) => (
@@ -97,7 +97,7 @@ const Navbar = () => {
               <span className={language === 'EN' ? 'text-white' : 'text-endor-muted'}>EN</span>
             </div>
             <Link to="/login" className="text-sm font-semibold text-endor-muted hover:text-white no-underline transition-colors px-3 py-2">
-              Iniciar Sesión
+              {t('nav.login')}
             </Link>
             <a
               href="https://discord.gg/rAUQENzfUU"
@@ -142,7 +142,7 @@ const Navbar = () => {
           </nav>
           <div className="flex flex-col items-center gap-4 w-full px-12">
             <Link to="/login" className="text-xl font-bold text-endor-primary no-underline" onClick={toggleMenu}>
-              Iniciar Sesión
+              {t('nav.login')}
             </Link>
             <button
               className="w-full max-w-xs btn btn-primary py-3 text-lg justify-center"

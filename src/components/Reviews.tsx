@@ -82,12 +82,12 @@ const ReviewCard: React.FC<ReviewProps> = ({ name, avatar, text, rating = 5, tag
 );
 
 const Reviews = () => (
-  <section id="resenas" className="py-24 relative z-10 overflow-hidden">
-    {/* Background */}
-    <div className="absolute inset-0 -z-10">
-      <div className="absolute w-[600px] h-[600px] rounded-full bg-endor-primary/8 blur-[120px] -bottom-20 -left-20 pointer-events-none" />
-    </div>
-    <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-endor-primary/40 to-transparent" />
+  <section id="resenas" className="py-24 relative z-10 overflow-hidden bg-process-bg bg-cover bg-center bg-fixed border-y border-endor-border">
+    {/* Background overlays */}
+    <div className="absolute inset-0 bg-endor-darker/80 pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-b from-endor-darker via-transparent to-endor-darker pointer-events-none" />
+    <div className="absolute w-[600px] h-[600px] rounded-full bg-endor-primary/8 blur-[120px] -bottom-20 -left-20 pointer-events-none" />
+
 
     <div className="max-w-layout mx-auto px-8">
       {/* Header */}

@@ -1,17 +1,17 @@
 import { useLanguage } from '../context/LanguageContext';
 import { Check, Zap, Shield, Users, Server } from 'lucide-react';
 
-const bullets = [
-  { icon: <Server size={15} />, text: 'Java & Bedrock.' },
-  { icon: <Zap size={15} />, text: 'Anti-DDoS Avanzado.' },
-  { icon: <Users size={15} />, text: '+5.000 clientes activos.' },
-  { icon: <Check size={15} />, text: 'Slots ilimitados.' },
-  { icon: <Shield size={15} />, text: 'Uptime 99.9%.' },
-  { icon: <Check size={15} />, text: 'Soporte 24/7 Discord.' },
-];
-
 const Hero = () => {
   const { t } = useLanguage();
+
+  const bullets = [
+    { icon: <Server size={15} />, text: t('hero.b1') },
+    { icon: <Zap size={15} />, text: t('hero.b2') },
+    { icon: <Users size={15} />, text: t('hero.b3') },
+    { icon: <Check size={15} />, text: t('hero.b4') },
+    { icon: <Shield size={15} />, text: t('hero.b5') },
+    { icon: <Check size={15} />, text: t('hero.b6') },
+  ];
 
   return (
     <section
@@ -25,10 +25,16 @@ const Hero = () => {
           alt="EndorHost Background"
           className="w-full h-full object-cover object-center opacity-30"
         />
-        {/* Dark vignette overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-endor-darker via-endor-darker/80 to-endor-darker/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-endor-darker via-transparent to-endor-darker/60" />
       </div>
+
+      {/* Original endorhost.png watermark restored */}
+      <img
+        src="/endorhost.png"
+        alt=""
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[900px] opacity-[0.05] pointer-events-none -z-10 filter blur-[1px]"
+      />
 
       {/* Purple nebula glows */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-endor-primary/20 rounded-full blur-[100px] pointer-events-none" />
@@ -67,20 +73,26 @@ const Hero = () => {
             {t('hero.subtitle')}
           </p>
 
-          {/* Feature bullets — like Holy.gg */}
+          {/* Feature bullets */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 mb-10">
             {bullets.map((b, i) => (
               <div key={i} className="flex items-center gap-2 text-sm text-endor-muted">
                 <span className="text-endor-primary shrink-0">{b.icon}</span>
-                <span><strong className="text-white">{b.text.split(' ')[0]}</strong>{' '}{b.text.split(' ').slice(1).join(' ')}</span>
+                <span>
+                  <strong className="text-white">{b.text.split(' ')[0]}</strong>
+                  {' '}{b.text.split(' ').slice(1).join(' ')}
+                </span>
               </div>
             ))}
           </div>
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4">
-            <a href="#planes" className="btn btn-primary text-base px-8 py-3.5 shadow-[0_0_30px_rgba(157,56,255,0.5)]">
-              🚀 Ver Planes
+            <a
+              href="#planes"
+              className="btn btn-primary text-base px-8 py-3.5 shadow-[0_0_30px_rgba(157,56,255,0.5)]"
+            >
+              {t('hero.btn.plans')}
             </a>
             <a
               href="https://discord.gg/rAUQENzfUU"
@@ -88,14 +100,16 @@ const Hero = () => {
               rel="noreferrer"
               className="btn btn-secondary text-base px-8 py-3.5"
             >
-              Discord
+              {t('hero.btn.discord')}
             </a>
           </div>
 
           {/* Live players badge */}
           <div className="mt-8 inline-flex items-center gap-2 text-sm text-endor-muted">
             <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)] animate-pulse" />
-            <span><strong className="text-white">3.200+</strong> jugadores conectados ahora mismo</span>
+            <span>
+              <strong className="text-white">3.200+</strong> {t('hero.live')}
+            </span>
           </div>
         </div>
       </div>
