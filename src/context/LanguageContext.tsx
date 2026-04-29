@@ -31,7 +31,20 @@ const translations: Translations = {
     'login.forgot': '¿Olvidaste tu contraseña?',
     'login.noServer': '¿No tienes un servidor? Consíguelo ahora',
     'login.error.email': 'Por favor, introduce un email válido',
-    'login.error.password': 'La contraseña debe tener al menos 6 caracteres'
+    'login.error.password': 'Contraseña invalida',
+    'login.noAccount': '¿Aún no tienes cuenta?',
+    'login.signupLink': 'Crear una cuenta nueva',
+    'signup.title': 'EndorHost',
+    'signup.subtitle': '¡Crea tu cuenta!',
+    'signup.userLabel': 'Nombre de usuario',
+    'signup.emailLabel': 'Correo electrónico',
+    'signup.passLabel': 'Contraseña',
+    'signup.btn': 'Registrarse',
+    'signup.error.email': 'Por favor, introduce un email válido',
+    'signup.error.password': 'La contraseña debe tener al menos 6 caracteres',
+    'signup.noServer': '¿No tienes un servidor? Consíguelo ahora',
+    'signup.alreadyAccount': '¿Ya tienes una cuenta?',
+    'signup.loginLink': 'Inicia sesión'
   },
   EN: {
     'nav.home': 'Home',
@@ -54,7 +67,20 @@ const translations: Translations = {
     'login.forgot': 'Forgot your password?',
     'login.noServer': "Don't have a server? Get it now",
     'login.error.email': 'Please enter a valid email',
-    'login.error.password': 'Password must be at least 6 characters'
+    'login.error.password': 'Password must be at least 6 characters',
+    'login.noAccount': "Don't have an account yet?",
+    'login.signupLink': 'Create a new account',
+    'signup.title': 'EndorHost',
+    'signup.subtitle': 'Create your account!',
+    'signup.userLabel': 'Username',
+    'signup.emailLabel': 'Email address',
+    'signup.passLabel': 'Password',
+    'signup.btn': 'Register',
+    'signup.error.email': 'Please enter a valid email',
+    'signup.error.password': 'Password must be at least 6 characters',
+    'signup.noServer': "Don't have a server? Get it now",
+    'signup.alreadyAccount': 'Already have an account?',
+    'signup.loginLink': 'Login'
   }
 };
 

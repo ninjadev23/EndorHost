@@ -45,9 +45,12 @@ const Login = () => {
       <div className="absolute top-8 left-8 z-20">
         <Link
           to="/"
-          className="bg-[rgba(15,10,28,0.7)] backdrop-blur-md border border-endor-border px-6 py-2.5 rounded-full text-endor-text font-semibold text-sm hover:border-endor-primary transition-all duration-300 no-underline inline-block"
+          className="bg-[rgba(15,10,28,0.7)] backdrop-blur-md border border-endor-border w-12 h-12 rounded-full text-endor-text hover:text-white hover:border-endor-primary transition-all duration-300 flex items-center justify-center no-underline"
+          title={t('login.noServer')}
         >
-          {t('login.noServer')}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
         </Link>
       </div>
 
@@ -100,7 +103,7 @@ const Login = () => {
                 {...register('email')}
                 type="text"
                 placeholder="usuario@ejemplo.com"
-                className={`w-full bg-endor-darker/50 border ${errors.email ? 'border-red-500/50' : 'border-endor-border'} rounded-xl px-5 py-4 text-white placeholder:text-endor-muted/50 focus:outline-none focus:border-endor-primary transition-colors`}
+                className={`w-full bg-endor-darker/50 border ${errors.email ? 'border-red-500/50' : 'border-endor-border'} rounded-xl px-5 py-3 text-white placeholder:text-endor-muted/50 focus:outline-none focus:border-endor-primary transition-colors`}
               />
               {errors.email && (
                 <p className="text-red-400 text-xs mt-1 ml-1 font-medium animate-fade-in">{errors.email.message}</p>
@@ -113,7 +116,7 @@ const Login = () => {
                 {...register('password')}
                 type="password"
                 placeholder="........"
-                className={`w-full bg-endor-darker/50 border ${errors.password ? 'border-red-500/50' : 'border-endor-border'} rounded-xl px-5 py-4 text-white placeholder:text-endor-muted/50 focus:outline-none focus:border-endor-primary transition-colors`}
+                className={`w-full bg-endor-darker/50 border ${errors.password ? 'border-red-500/50' : 'border-endor-border'} rounded-xl px-5 py-3 text-white placeholder:text-endor-muted/50 focus:outline-none focus:border-endor-primary transition-colors`}
               />
               {errors.password && (
                 <p className="text-red-400 text-xs mt-1 ml-1 font-medium animate-fade-in">{errors.password.message}</p>
@@ -122,15 +125,27 @@ const Login = () => {
 
             <button
               disabled={isSubmitting}
-              className="w-full btn btn-primary py-4 rounded-xl text-lg mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn btn-primary py-3 rounded-xl text-lg mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? '...' : t('login.btn')}
             </button>
 
-            <div className="text-center mt-6">
+            <div className="text-center mt-2">
               <a href="#" className="text-endor-muted hover:text-endor-primary transition-colors text-sm font-medium no-underline">
                 {t('login.forgot')}
               </a>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-endor-border-hl/30 text-center">
+              <p className="text-endor-muted text-sm font-medium mb-2">
+                {t('login.noAccount')}
+              </p>
+              <Link
+                to="/signup"
+                className="inline-flex items-center justify-center w-full px-6 py-3 border border-endor-primary text-endor-primary rounded-xl font-bold hover:bg-endor-primary hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(var(--color-endor-primary),0.1)] hover:shadow-[0_0_20px_rgba(var(--color-endor-primary),0.3)] no-underline"
+              >
+                {t('login.signupLink')}
+              </Link>
             </div>
           </form>
         </div>
