@@ -121,7 +121,7 @@ const Dashboard = () => {
       )}
 
       {/* ── MAIN CONTENT ── */}
-      <main className="flex-grow lg:ml-64 flex flex-col min-h-screen pb-20 lg:pb-0">
+      <main className="flex-grow lg:ml-64 flex flex-col min-h-screen">
 
         {/* ── TOP BAR ── */}
         <header className="sticky top-0 z-20 bg-black/40 backdrop-blur-xl border-b border-endor-border px-4 md:px-8 py-3 md:py-4 flex justify-between items-center">
@@ -237,22 +237,7 @@ const Dashboard = () => {
         </div>
       </main>
 
-      {/* ── MOBILE BOTTOM NAV ── */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[rgba(8,5,16,0.95)] backdrop-blur-xl border-t border-endor-border flex items-center justify-around px-2 py-2 safe-bottom">
-        {navItems.slice(0, 5).map((item) => (
-          <button
-            key={item.label}
-            className={`flex flex-col items-center gap-1 px-2 py-1.5 rounded-xl transition-all duration-200 min-w-[52px]
-              ${item.active
-                ? 'text-endor-primary'
-                : 'text-endor-muted hover:text-white'
-              }`}
-          >
-            {item.mobileIcon}
-            <span className="text-[9px] font-bold leading-none">{item.label}</span>
-          </button>
-        ))}
-      </nav>
+
     </div>
   );
 };
